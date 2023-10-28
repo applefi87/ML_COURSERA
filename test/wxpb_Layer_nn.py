@@ -6,7 +6,7 @@ from tensorflow.keras.losses import MeanSquaredError
 from tensorflow.keras import regularizers
 
 import numpy as np
-data_length = 500
+data_length = 10
 shape = 2
 units = 3
 def generateData(length):
@@ -33,9 +33,9 @@ def wxpb_function(inputs, w,p,b):
     return z
 
 x_data = tf.random.normal(shape=(data_length, shape), dtype=tf.float32)
-p_values = tf.random.uniform(shape=(shape, units), minval=1.0, maxval=5.0, dtype=tf.float32)
-w_values = tf.random.uniform(shape=(shape, units), minval=1.0, maxval=5.0, dtype=tf.float32)
-b_values = tf.random.uniform(shape=(units,), minval=1.0, maxval=5.0, dtype=tf.float32)
+p_values = tf.random.uniform(shape=(shape, units), minval=3.0, maxval=3.0, dtype=tf.float32)
+w_values = tf.random.uniform(shape=(shape, units), minval=2.0, maxval=2.0, dtype=tf.float32)
+b_values = tf.random.uniform(shape=(units,), minval=1.0, maxval=1.0, dtype=tf.float32)
 
 y_data = wxpb_function(x_data, w_values,p_values,b_values)
 
@@ -57,15 +57,15 @@ class PowerLayer(Layer):
     def build(self, input_shape):
         input_shape = tf.TensorShape(input_shape)
         last_dim = tf.compat.dimension_value(input_shape[-1])
-        self.p = self.add_weight(shape=[last_dim, self.units],trainable=True,regularizer=regularizers.l2(0.001),name='p')
-        self.w = self.add_weight(shape=[last_dim, self.units],trainable=True,regularizer=regularizers.l2(0.001),name='w')
+        self.p = self.add_weight(shape=[last_dim, self.units],trainable=True,regularizer=regularizers.l2(0.00000001),name='p')
+        self.w = self.add_weight(shape=[last_dim, self.units],trainable=True,regularizer=regularizers.l2(0.0000001),name='w')
         self.b = self.add_weight(shape=[self.units],trainable=True,name='b')
         super(PowerLayer, self).build(input_shape)
 
     def call(self, inputs):
         result = wxpb_function(inputs, self.w, self.p, self.b)
         return result
-    
+
 # Build and compile the model
 from tensorflow.keras.models import Sequential
 model = Sequential(
@@ -78,7 +78,7 @@ model = Sequential(
 )
 model.compile(
     loss=tf.keras.losses.MeanSquaredError(),
-    optimizer=Adam(learning_rate=0.01),
+    optimizer=Adam(learning_rate=0.001),
 )
 
 
@@ -111,7 +111,7 @@ class PrintWPValueGradientAndLoss(tf.keras.callbacks.Callback):
 
 print_p_gradient_and_loss_callback = PrintWPValueGradientAndLoss(x_train, y_train)
 # history = model.fit(x_train, y_train, epochs=4, verbose=0, callbacks=[print_p_gradient_and_loss_callback])
-history = model.fit(x_train, y_train, epochs=2000, verbose=0)
+history = model.fit(x_train, y_train, epochs=1000, verbose=0)
 # history = model.fit(x_train, y_train, epochs=4, verbose=0, callbacks=[print_p_gradient_and_loss_callback])
 end_time = time.time()
 elapsed_time = end_time - start_time

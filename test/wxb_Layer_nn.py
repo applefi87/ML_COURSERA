@@ -6,9 +6,9 @@ from tensorflow.keras.losses import MeanSquaredError
 from tensorflow.keras import regularizers
 
 import numpy as np
-data_length = 500
-shape = 100
-units = 40
+data_length = 2
+shape = 2
+units = 3
 def generateData(length):
     xArr = []
     for _ in range(length):
@@ -21,8 +21,8 @@ x_data = tf.convert_to_tensor(x_data)
 # print(x_data)
 
 x_data = tf.random.normal(shape=(data_length, shape), dtype=tf.float32)
-w_values = tf.random.uniform(shape=(shape, units), minval=1.0, maxval=5.0, dtype=tf.float32)
-b_values = tf.random.uniform(shape=(units,), minval=1.0, maxval=5.0, dtype=tf.float32)
+w_values = tf.random.uniform(shape=(shape, units), minval=5.0, maxval=5.0, dtype=tf.float32)
+b_values = tf.random.uniform(shape=(units,), minval=2.0, maxval=2.0, dtype=tf.float32)
 
 y_data = tf.matmul(x_data, w_values)+b_values
 # print(x_data ,y_data )
@@ -81,7 +81,7 @@ class PrintWPValueGradientAndLoss(tf.keras.callbacks.Callback):
 
 print_p_gradient_and_loss_callback = PrintWPValueGradientAndLoss(x_train, y_train)
 # history = model.fit(xtrain, y_train, epochs=4, verbose=0, callbacks=[print_p_gradient_and_loss_callback])
-history = model.fit(x_train, y_train, epochs=500, verbose=0)
+history = model.fit(x_train, y_train, epochs=3000, verbose=0)
 # history = model.fit(x_train, y_train, epochs=4, verbose=0, callbacks=[print_p_gradient_and_loss_callback])
 
 end_time = time.time()

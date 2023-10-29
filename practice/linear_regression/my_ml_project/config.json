@@ -1,0 +1,8 @@
+{
+  "development": {
+      "logging_level": "DEBUG"
+  },
+  "production": {
+      "logging_level": "WARNING"
+  }
+}

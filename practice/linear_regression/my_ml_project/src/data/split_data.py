@@ -11,7 +11,7 @@ def main(input_path, train_output_path, test_output_path, test_size=0.2, random_
 
 if __name__ == "__main__":
     project_dir = os.path.dirname(os.path.dirname(os.getcwd()))
-    input_path = os.path.join(project_dir, 'data', 'processed', 'cleaned_data.csv')
+    input_path = os.path.join(project_dir, 'data', 'processed', 'features_engineered.csv')
     train_output_path = os.path.join(project_dir, 'data', 'processed', 'train_data.csv')
     test_output_path = os.path.join(project_dir, 'data', 'processed', 'test_data.csv')
     

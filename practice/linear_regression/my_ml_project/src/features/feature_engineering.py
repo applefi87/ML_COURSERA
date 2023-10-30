@@ -17,6 +17,6 @@ def feature_engineering_data(input_path,output_path,column_name="size"):
 # but you can also import and use the functions elsewhere without executing the whole script
 if __name__ == "__main__":
     project_dir = os.path.dirname(os.path.dirname(os.getcwd()))
-    input_path = os.path.join(project_dir, 'data', 'processed', 'cleaned_data.csv')
+    input_path = os.path.join(project_dir, 'data', 'interim', 'cleaned_data.csv')
     output_path = os.path.join(project_dir, 'data', 'processed', 'features_engineered.csv')
     feature_engineering_data(input_path, output_path)

@@ -4,5 +4,7 @@
   },
   "production": {
       "logging_level": "WARNING"
-  }
+  },
+  "SIZE_COLUMN": "size",
+  "WEIGHT_COLUMN": "weight"
 }

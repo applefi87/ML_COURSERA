@@ -17,6 +17,7 @@
 
 ## Build into function:
 import pandas as pd
+from src.utils.data_utils import convert_to_float
 import os
 # This way if later the csv columns name change,you just need to change config.json. Or you can directly declare here.
 # If directly write size into function like filter_positive(data,column_name="size"), would hard for modification in future and for test.
@@ -27,14 +28,8 @@ with open(config_path, "r") as f:
     config = json.load(f)
 SIZE_COLUMN = config["SIZE_COLUMN"]
 WEIGHT_COLUMN = config["WEIGHT_COLUMN"]
-#
 
-def convert_types(data,column_names,type='int32'):
-    """Convert data types for certain columns."""
-    for column in column_names:
-        data[column] = data[column].astype(type)
-    return data
-  
+#
 def drop_na(data):
   """Drop rows with missing values."""
   return data.dropna()
@@ -50,18 +45,17 @@ def remove_outliers(data):
   IQR = Q3 - Q1
   return data[~((data < (Q1 - 1.5 * IQR)) | (data > (Q3 + 1.5 * IQR))).any(axis=1)]
 
-def clean_data(data, columns_to_filter=[],columns_change_types=[]):
+def clean_data(data, columns_to_filter=[],exclude_columns=[]):
     """Clean data."""
-    data = drop_na(data)
+    data = convert_to_float(drop_na(data),exclude_columns)
     data = filter_positive(data, columns_to_filter,)
     data = remove_outliers(data)
-    data = convert_types(data,columns_change_types) 
     return data
 
-def process_data(input_path, output_path, columns_to_filter=[SIZE_COLUMN, WEIGHT_COLUMN], columns_change_types=[]):
+def process_data(input_path, output_path, columns_to_filter=[SIZE_COLUMN, WEIGHT_COLUMN], exclude_columns=[]):
     """Load, clean, and save data."""
     data = pd.read_csv(input_path)
-    cleaned_data = clean_data(data,columns_to_filter,columns_change_types)
+    cleaned_data = clean_data(data,columns_to_filter,exclude_columns)
     cleaned_data.to_csv(output_path, index=False)
 
 if __name__ == "__main__":

@@ -6,5 +6,6 @@
       "logging_level": "WARNING"
   },
   "SIZE_COLUMN": "size",
-  "WEIGHT_COLUMN": "weight"
+  "WEIGHT_COLUMN": "weight",
+  "POLY_DEGREE":1
 }

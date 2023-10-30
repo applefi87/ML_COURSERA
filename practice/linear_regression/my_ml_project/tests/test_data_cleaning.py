@@ -21,6 +21,6 @@ def test_clean_data():
     expected = pd.DataFrame({
         "x": [1, 2, 5],
         WEIGHT_COLUMN: [10, 20, 50]
-    }, dtype='int32')
+    }, dtype='float64')
 
     pd.testing.assert_frame_equal(cleaned, expected)

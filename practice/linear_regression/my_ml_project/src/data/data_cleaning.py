@@ -46,6 +46,6 @@ def clean_data(input_path,output_path,column_name="weight"):
 if __name__ == "__main__":
     project_dir = os.path.dirname(os.path.dirname(os.getcwd()))
     input_path = os.path.join(project_dir, 'data', 'raw', 'initial_dataset.csv')
-    output_path = os.path.join(project_dir, 'data', 'processed', 'cleaned_data.csv')
+    output_path = os.path.join(project_dir, 'data', 'interim', 'cleaned_data.csv')
     
     clean_data(input_path, output_path)

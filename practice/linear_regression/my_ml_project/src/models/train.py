@@ -50,21 +50,15 @@ def save_model(model, filename='train_linear_regression_model.pkl'):
 if __name__ == "__main__":
     ##### 5. Model Selection & Training #####
     data = load_data()
-    
     # Splitting the data
     X = data.drop('weight', axis=1)
     y = data['weight']
     X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=42)
 
     model = train_model(X_train, y_train)
-
     ##### 7. Model Tuning using Cross-Validation ############
     cross_validate_model(model, X_train, y_train)
-    
     ##### 6. Model Evaluation ############
     evaluate_model(model, X_val, y_val)
-
-
-
     # Save the trained model
     save_model(model)

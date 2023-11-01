@@ -4,17 +4,17 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import joblib
 
-project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 log_dir = os.path.join(project_dir, 'logs')
 # Set up logging
 import logging
 from src.utils.config_loader import ENVIRONMENT
 
 if ENVIRONMENT == "cloud_training":
-    logging.basicConfig(filename=os.path.join(project_dir, 'cloud_training_log.txt'), level=logging.INFO, 
+    logging.basicConfig(filename=os.path.join(log_dir, 'cloud_training_log.txt'), level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 else:  # Local training environment
-    logging.basicConfig(filename=os.path.join(project_dir, 'training_log.txt'), level=logging.DEBUG, 
+    logging.basicConfig(filename=os.path.join(log_dir, 'training_log.txt'), level=logging.DEBUG, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
 logging.info("****Starting final model training on full dataset with hyperparameters:****")

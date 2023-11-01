@@ -3,7 +3,7 @@ import argparse
 import pandas as pd
 import joblib
 
-project_dir = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 log_dir = os.path.join(project_dir, 'logs')
 
 # Set up logging
@@ -11,9 +11,9 @@ import logging
 from src.utils.config_loader import ENVIRONMENT
 
 if ENVIRONMENT == "production":
-    logging.basicConfig(filename='logs/prediction_log.txt', level=logging.WARNING)
+    logging.basicConfig(filename=os.path.join(log_dir, 'prediction_log.txt'), level=logging.WARNING)
 else:
-    logging.basicConfig(filename='logs/training_log.txt', level=logging.INFO, 
+    logging.basicConfig(filename=os.path.join(log_dir, 'training_log.txt'), level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_model(model_path):
@@ -35,10 +35,17 @@ def make_predictions(model, data_path):
         logging.error(f"Error making predictions for data from {data_path}: {str(e)}")
         raise
 
+# Mocking command-line arguments for the notebook
+import sys
+model_path = os.path.join(project_dir, 'models',"linear_regression_model.pkl")
+data_path = os.path.join(project_dir, 'data',"new_data.csv")
+output_path = os.path.join(project_dir, "outputs","predictions.csv")
+sys.argv = ['script_name', model_path, data_path, '--output_path', output_path]
+
 if __name__ == "__main__":
     parser = argparse.ArgumentParser(description="Make predictions using a trained model.")
-    parser.add_argument("--model_path", type=str, default="models/linear_regression_model.pkl", help="Path to the trained model file.")
-    parser.add_argument("--data_path", type=str, required=True, help="Path to the new data on which predictions should be made.")
+    parser.add_argument("model_path", type=str, help="Path to the trained model file.")
+    parser.add_argument("data_path", type=str, help="Path to the new data on which predictions should be made.")
     parser.add_argument("--output_path", type=str, default="outputs/predictions.csv", help="Path where predictions will be saved.")
     args = parser.parse_args()
     

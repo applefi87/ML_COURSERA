@@ -1,0 +1,69 @@
+2023-11-01 11:27:38,881 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-01 11:27:39,050 - INFO - ****Saving final model to models/linear_regression_model.pkl. End.***
+2023-11-01 11:28:23,044 - INFO - ****Starting experimental model training with hyperparameters:
+2023-11-01 11:28:23,169 - INFO - 5-fold cross-validated MSE: [2887.24219188 4797.41572122 3117.02633182 1000.4918792   693.10469826]
+2023-11-01 11:28:23,169 - INFO - Mean MSE: 2499.0561644766053
+2023-11-01 11:28:23,169 - INFO - Standard Deviation of MSE: 1504.804823699495
+2023-11-01 11:28:23,171 - INFO - Best model performance on validation set: 
+2023-11-01 11:28:23,172 - INFO - Mean Squared Error on Validation Set: 1998.2100946484286
+2023-11-01 11:28:23,172 - INFO - Mean Absolute Error on Validation Set: 27.381424067549577
+2023-11-01 11:28:23,172 - INFO - R^2 Score: 0.9590986045571286
+2023-11-01 11:28:23,173 - INFO - Model saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\train_linear_regression_model.pkl
+2023-11-01 11:28:23,173 - INFO - ****Saved model. End****
+2023-11-01 11:30:09,692 - INFO - ****Starting experimental model training with hyperparameters:
+2023-11-01 11:30:22,149 - INFO - 5-fold cross-validated MSE: [2887.24219188 4797.41572122 3117.02633182 1000.4918792   693.10469826]
+2023-11-01 11:30:22,149 - INFO - Mean MSE: 2499.0561644766053
+2023-11-01 11:30:22,149 - INFO - Standard Deviation of MSE: 1504.804823699495
+2023-11-01 11:30:24,274 - INFO - Best model performance on validation set: 
+2023-11-01 11:30:24,275 - INFO - Mean Squared Error on Validation Set: 1998.2100946484286
+2023-11-01 11:30:24,275 - INFO - Mean Absolute Error on Validation Set: 27.381424067549577
+2023-11-01 11:30:24,275 - INFO - R^2 Score: 0.9590986045571286
+2023-11-01 11:30:24,277 - INFO - Model saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\train_linear_regression_model.pkl
+2023-11-01 11:30:27,448 - INFO - 5-fold cross-validated MSE: [2887.24219188 4797.41572122 3117.02633182 1000.4918792   693.10469826]
+2023-11-01 11:30:27,448 - INFO - Mean MSE: 2499.0561644766053
+2023-11-01 11:30:27,448 - INFO - Standard Deviation of MSE: 1504.804823699495
+2023-11-01 11:30:27,450 - INFO - Best model performance on validation set: 
+2023-11-01 11:30:27,451 - INFO - Mean Squared Error on Validation Set: 1998.2100946484286
+2023-11-01 11:30:27,451 - INFO - Mean Absolute Error on Validation Set: 27.381424067549577
+2023-11-01 11:30:27,451 - INFO - R^2 Score: 0.9590986045571286
+2023-11-01 11:30:27,452 - INFO - Model saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\train_linear_regression_model.pkl
+2023-11-01 11:30:27,452 - INFO - ****Saved model. End****
+2023-11-01 11:30:29,361 - INFO - ****Starting experimental model training with hyperparameters:
+2023-11-01 11:30:29,388 - INFO - 5-fold cross-validated MSE: [2887.24219188 4797.41572122 3117.02633182 1000.4918792   693.10469826]
+2023-11-01 11:30:29,388 - INFO - Mean MSE: 2499.0561644766053
+2023-11-01 11:30:29,388 - INFO - Standard Deviation of MSE: 1504.804823699495
+2023-11-01 11:30:29,390 - INFO - Best model performance on validation set: 
+2023-11-01 11:30:29,390 - INFO - Mean Squared Error on Validation Set: 1998.2100946484286
+2023-11-01 11:30:29,390 - INFO - Mean Absolute Error on Validation Set: 27.381424067549577
+2023-11-01 11:30:29,390 - INFO - R^2 Score: 0.9590986045571286
+2023-11-01 11:30:29,392 - INFO - Model saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\train_linear_regression_model.pkl
+2023-11-01 11:30:29,392 - INFO - ****Saved model. End****
+2023-11-01 11:35:39,959 - ERROR - Error loading model from models/linear_regression_model.pkl: [Errno 2] No such file or directory: 'models/linear_regression_model.pkl'
+2023-11-01 11:35:39,959 - CRITICAL - Critical error: [Errno 2] No such file or directory: 'models/linear_regression_model.pkl'
+2023-11-01 11:50:06,486 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:50:06,487 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: [Errno 2] No such file or directory: 'c:\\Users\\werrt\\miniconda3\\envs\\TF3\\ML_COURSERA\\practice\\linear_regression\\my_ml_project\\data\\new_data.csv'
+2023-11-01 11:50:06,487 - CRITICAL - Critical error: [Errno 2] No such file or directory: 'c:\\Users\\werrt\\miniconda3\\envs\\TF3\\ML_COURSERA\\practice\\linear_regression\\my_ml_project\\data\\new_data.csv'
+2023-11-01 11:50:29,338 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:50:29,339 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: [Errno 2] No such file or directory: 'c:\\Users\\werrt\\miniconda3\\envs\\TF3\\ML_COURSERA\\practice\\linear_regression\\my_ml_project\\data\\new_data.csv'
+2023-11-01 11:50:29,339 - CRITICAL - Critical error: [Errno 2] No such file or directory: 'c:\\Users\\werrt\\miniconda3\\envs\\TF3\\ML_COURSERA\\practice\\linear_regression\\my_ml_project\\data\\new_data.csv'
+2023-11-01 11:51:07,325 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:51:07,326 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- weight
+
+2023-11-01 11:51:07,327 - CRITICAL - Critical error: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- weight
+
+2023-11-01 11:51:35,374 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:51:35,376 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: The feature names should match those that were passed during fit.
+Feature names unseen at fit time:
+- weight
+
+2023-11-01 11:53:01,766 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:53:01,768 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-01 11:53:06,188 - WARNING - c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv already exists!
+2023-11-01 11:53:47,719 - INFO - Predictions saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv
+2023-11-01 11:54:20,970 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-01 11:54:20,973 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-01 11:54:20,975 - INFO - Predictions saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv

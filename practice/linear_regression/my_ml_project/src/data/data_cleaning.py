@@ -19,15 +19,26 @@
 import pandas as pd
 from src.utils.data_utils import convert_to_float
 import os
+import logging
+from src.utils.config_loader import ENVIRONMENT
+project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+log_dir = os.path.join(project_dir, 'logs')
+LOGGING_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
+if ENVIRONMENT == "production":
+    logging.basicConfig(filename=os.path.join(log_dir, 'production_log.txt'), level=logging.ERROR, format=LOGGING_FORMAT)
+else:
+    logging.basicConfig(filename=os.path.join(log_dir, 'development_log.txt'), level=logging.DEBUG, format=LOGGING_FORMAT)
+
+
 # This way if later the csv columns name change,you just need to change config.json. Or you can directly declare here.
 # If directly write size into function like filter_positive(data,column_name="size"), would hard for modification in future and for test.
 import json
-project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 config_path = os.path.join(project_dir, 'config.json')
 with open(config_path, "r") as f:
     config = json.load(f)
 SIZE_COLUMN = config["SIZE_COLUMN"]
 WEIGHT_COLUMN = config["WEIGHT_COLUMN"]
+
 
 #
 def drop_na(data):

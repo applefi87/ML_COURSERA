@@ -4,7 +4,15 @@ import pandas as pd
 import joblib
 
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+data_path = os.path.join(project_dir, 'data',  'new_data.csv')
 log_dir = os.path.join(project_dir, 'logs')
+import json
+config_path = os.path.join(project_dir, 'config.json')
+with open(config_path, "r") as f:
+    config = json.load(f)
+SIZE_COLUMN = config["SIZE_COLUMN"]
+WEIGHT_COLUMN = config["WEIGHT_COLUMN"]
+POLY_DEGREE = config["POLY_DEGREE"]
 
 # Set up logging
 import logging
@@ -13,7 +21,7 @@ from src.utils.config_loader import ENVIRONMENT
 if ENVIRONMENT == "production":
     logging.basicConfig(filename=os.path.join(log_dir, 'prediction_log.txt'), level=logging.WARNING)
 else:
-    logging.basicConfig(filename=os.path.join(log_dir, 'training_log.txt'), level=logging.INFO, 
+    logging.basicConfig(filename=os.path.join(log_dir, 'prediction_log.txt'), level=logging.INFO, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
 def load_model(model_path):
@@ -25,9 +33,11 @@ def load_model(model_path):
         logging.error(f"Error loading model from {model_path}: {str(e)}")
         raise
 
+from src.data.data_utils import load_processed_data
 def make_predictions(model, data_path):
     try:
-        data = pd.read_csv(data_path)
+        
+        data = load_processed_data(data_path,columns_to_filter=[SIZE_COLUMN], exclude_columns=[], y_column_name=WEIGHT_COLUMN, degree=POLY_DEGREE)
         predictions = model.predict(data)
         logging.info(f"Predictions made for data from {data_path}")
         return predictions
@@ -38,8 +48,13 @@ def make_predictions(model, data_path):
 # Mocking command-line arguments for the notebook
 import sys
 model_path = os.path.join(project_dir, 'models',"linear_regression_model.pkl")
-data_path = os.path.join(project_dir, 'data',"new_data.csv")
-output_path = os.path.join(project_dir, "outputs","predictions.csv")
+from datetime import datetime
+current_time = datetime.now()
+# Format current datetime into a string with the format 'year month day hour minute second'
+formatted_time = current_time.strftime("%Y%m%d-%H%M%S")
+# Create the output path with the timestamp
+output_path = os.path.join(project_dir, "outputs", f"predictions-{formatted_time}.csv")
+output_path = os.path.join(project_dir, "outputs", f"predictions.csv")
 sys.argv = ['script_name', model_path, data_path, '--output_path', output_path]
 
 if __name__ == "__main__":
@@ -73,3 +88,4 @@ if __name__ == "__main__":
         
     except Exception as e:
         logging.critical(f"Critical error: {str(e)}")
+        print(f"Critical error: {str(e)}")

@@ -21,6 +21,7 @@ from src.utils.data_utils import convert_to_float
 import os
 import logging
 from src.utils.config_loader import ENVIRONMENT
+from sklearn.base import BaseEstimator, TransformerMixin
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 log_dir = os.path.join(project_dir, 'logs')
 LOGGING_FORMAT = '%(asctime)s - %(levelname)s - %(message)s'
@@ -42,8 +43,11 @@ WEIGHT_COLUMN = config["WEIGHT_COLUMN"]
 
 #
 def drop_na(data):
-  """Drop rows with missing values."""
-  return data.dropna()
+    """Drop rows with missing values during training. Fill NA with mean during prediction."""
+    if ENVIRONMENT == 'production':
+        return data.fillna(data.mean())
+    else:
+        return data.dropna()
 def filter_positive(data, column_names):
     """Filter rows where values in specified columns are positive."""
     for column in column_names:
@@ -61,7 +65,19 @@ def clean_data(data, columns_to_filter=[],exclude_columns=[]):
     data = convert_to_float(drop_na(data),exclude_columns)
     data = filter_positive(data, columns_to_filter,)
     data = remove_outliers(data)
+    data = data.reset_index(drop=True)
     return data
+
+class DataCleaner(BaseEstimator, TransformerMixin):
+    def __init__(self, columns_to_filter=[], exclude_columns=[]):
+        self.columns_to_filter = columns_to_filter
+        self.exclude_columns = exclude_columns
+
+    def fit(self, X, y=None):
+        return self
+
+    def transform(self, X, y=None):
+        return clean_data(X, self.columns_to_filter,self.exclude_columns)
 
 def process_data(input_path, output_path, columns_to_filter=[SIZE_COLUMN, WEIGHT_COLUMN], exclude_columns=[]):
     """Load, clean, and save data."""
@@ -72,5 +88,4 @@ def process_data(input_path, output_path, columns_to_filter=[SIZE_COLUMN, WEIGHT
 if __name__ == "__main__":
     input_path = os.path.join(project_dir, 'data', 'raw', 'initial_dataset.csv')
     output_path = os.path.join(project_dir, 'data', 'interim', 'cleaned_data.csv')
-    
     process_data(input_path, output_path)

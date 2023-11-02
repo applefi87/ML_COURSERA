@@ -1,10 +1,9 @@
 import os
-import pandas as pd
 from sklearn.linear_model import LinearRegression
-from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 import joblib
 
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+data_path = os.path.join(project_dir, 'data', 'raw', 'initial_dataset.csv')
 log_dir = os.path.join(project_dir, 'logs')
 # Set up logging
 import logging
@@ -20,13 +19,13 @@ else:  # Local training environment
 logging.info("****Starting final model training on full dataset with hyperparameters:****")
 
 ##### 8. Final Model Training & Testing #####
-from src.data.data_loader import load_dataset
+from src.data.data_utils import load_processed_data
 
 
 
 try:
   # Train the model on the full dataset (combining training and validation sets)
-  data = load_dataset("processed", "features_engineered.csv")
+  data = load_processed_data(data_path)
   X = data.drop('weight', axis=1)
   y = data['weight']
 

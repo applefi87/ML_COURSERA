@@ -6,6 +6,7 @@ from sklearn.linear_model import LinearRegression
 from sklearn.metrics import mean_squared_error, mean_absolute_error, r2_score
 
 project_dir = os.path.dirname(os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
+data_path = os.path.join(project_dir, 'data', 'raw', 'initial_dataset.csv')
 log_dir = os.path.join(project_dir, 'logs')
 # Set up logging
 import logging
@@ -18,16 +19,9 @@ else:  # Local training environment
     logging.basicConfig(filename=os.path.join(log_dir, 'training_log.txt'), level=logging.DEBUG, 
                         format='%(asctime)s - %(levelname)s - %(message)s')
 
-logging.info("****Starting experimental model training with hyperparameters:")
+logging.info("****Starting experimental model training with hyperparameters:") 
 
-def load_data():
-    try:
-        from src.data.data_loader import load_dataset
-        return load_dataset("processed", "train_data.csv")
-    except Exception as e:
-        logging.error(f"Error loading data: {str(e)}")
-        raise  
-
+from src.data.data_utils import load_processed_data
 def train_model(X_train, y_train):
     try:
         # Train the model
@@ -71,11 +65,10 @@ def save_model(model, filename='train_linear_regression_model.pkl'):
     except Exception as e:
         logging.error(f"Error loading data: {str(e)}")
         raise  
-
 if __name__ == "__main__":
     try:
         ##### 5. Model Selection & Training #####
-        data = load_data()
+        data = load_processed_data(data_path)
         # Splitting the data
         X = data.drop('weight', axis=1)
         y = data['weight']

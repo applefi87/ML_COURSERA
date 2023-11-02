@@ -1,0 +1,57 @@
+2023-11-02 12:34:57,331 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 12:34:57,335 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 12:34:57,335 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 12:34:57,336 - CRITICAL - Critical error: 'weight'
+2023-11-02 12:39:14,296 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 12:39:14,379 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 12:39:15,017 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 12:39:15,017 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 12:39:15,017 - CRITICAL - Critical error: 'weight'
+2023-11-02 12:39:47,399 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 12:39:47,458 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 12:39:47,470 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 12:39:47,471 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 12:39:47,471 - CRITICAL - Critical error: 'weight'
+2023-11-02 12:40:30,517 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 12:40:30,579 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 12:40:30,617 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 12:40:30,617 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 12:40:30,617 - CRITICAL - Critical error: 'weight'
+2023-11-02 13:31:12,671 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 13:31:12,689 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 13:31:12,689 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 13:31:12,689 - CRITICAL - Critical error: 'weight'
+2023-11-02 13:31:43,248 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 13:31:43,307 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 13:31:43,322 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 13:31:43,322 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 13:31:43,323 - CRITICAL - Critical error: 'weight'
+2023-11-02 13:33:50,647 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 13:33:50,707 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 13:33:50,727 - ERROR - Error loading and processing data: 'weight'
+2023-11-02 13:33:50,727 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: 'weight'
+2023-11-02 13:33:50,727 - CRITICAL - Critical error: 'weight'
+2023-11-02 14:51:46,926 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 14:51:46,926 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: name 'DEGREE' is not defined
+2023-11-02 14:51:46,927 - CRITICAL - Critical error: name 'DEGREE' is not defined
+2023-11-02 14:52:33,409 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 14:52:35,780 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 14:52:35,780 - ERROR - Error making predictions for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv: name 'DEGREE' is not defined
+2023-11-02 14:52:35,780 - CRITICAL - Critical error: name 'DEGREE' is not defined
+2023-11-02 14:53:23,566 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 14:53:23,584 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-02 14:53:23,584 - WARNING - c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv already exists!
+2023-11-02 14:53:28,020 - INFO - User aborted due to existing output file.
+2023-11-02 14:53:28,024 - INFO - Predictions saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv
+2023-11-02 14:55:05,627 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 14:55:05,697 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 14:55:05,706 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-02 14:55:05,706 - WARNING - c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv already exists!
+2023-11-02 15:10:06,127 - INFO - ****Starting final model training on full dataset with hyperparameters:****
+2023-11-02 15:10:06,196 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 15:10:06,206 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-02 15:10:06,208 - INFO - Predictions saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions-20231102-151006.csv
+2023-11-02 15:15:23,561 - INFO - Model loaded from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\models\linear_regression_model.pkl
+2023-11-02 15:15:23,572 - INFO - Predictions made for data from c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\data\new_data.csv
+2023-11-02 15:15:23,572 - WARNING - c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv already exists!
+2023-11-02 15:15:32,279 - INFO - Predictions saved to c:\Users\werrt\miniconda3\envs\TF3\ML_COURSERA\practice\linear_regression\my_ml_project\outputs\predictions.csv

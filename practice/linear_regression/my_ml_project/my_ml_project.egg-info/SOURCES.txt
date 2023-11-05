@@ -5,10 +5,12 @@ my_ml_project.egg-info/SOURCES.txt
 my_ml_project.egg-info/dependency_links.txt
 my_ml_project.egg-info/top_level.txt
 src/__init__.py
+src/preprocessing_pipeline.py
 src/data/__init__.py
 src/data/data_cleaning.py
 src/data/data_collection.py
 src/data/data_loader.py
+src/data/data_utils.py
 src/data/split_data.py
 src/features/__init__.py
 src/features/feature_engineering.py
@@ -18,8 +20,8 @@ src/models/train.py
 src/models/train_final.py
 src/utils/__init__.py
 src/utils/config_loader.py
+src/utils/data_utils.py
 src/visualization/__init__.py
-src/visualization/data_plotter.py
 src/visualization/plotting.py
 tests/test_data_cleaning.py
 tests/test_feature_engineering.py
